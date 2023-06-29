@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+.buttons{
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+    text-align: center;
+    padding: 5px;
+}
+button{
+    padding:10px;
+    margin: 0px;
+    border: 1px solid black;
+    width: 100px;
+    cursor:pointer;
+
+}
+#display{
+    display: block;
+    margin: auto;
+    border: 1px solid black;
+    padding: 5%;
+    width: 230px;
+    height: 3px;
+}
+#equal{
+    background-color: rgb(32, 165, 218);
+    color: black;
+}
+    </style>
+
+</head>
+<body>
+    <h1 style="color:darkgoldenrod; text-align: center;"> Calculator </h1>
+    <div class="container">
+       <input type="text" id="display"></input>
+        <div class="buttons">
+            <div id="row1">
+        <button   value="1" onclick="getvalue('1')">1</button>
+        <button value="2"  onclick="getvalue('2')">2</button>
+        <button  value="3" onclick="getvalue('3')">3</button>
+         </div>
+        <div id="row2">
+        <button  value="4"  onclick="getvalue('4')">4</button>
+        <button  value="5"  onclick="getvalue('5')">5</button>
+        <button  value="6"  onclick="getvalue('6')">6</button>
+    </div>
+        <div id="row3">
+        <button  value="7"  onclick="getvalue('7')">7</button>
+        <button  value="8" onclick="getvalue('8')">8</button>
+        <button  value="9" onclick="getvalue('9')">9</button>
+    </div>
+        <div id="row4">
+        <button  value="0" onclick="getvalue('0')">0</button>
+        <button  value="+" onclick="getvalue('+')">+</button>
+        <button  value="-" onclick="getvalue('-')">-</button>
+    </div>
+        <div id="row5">
+        <button  value="*" onclick="getvalue('*')">*</button>
+        <button  value= ""  onclick="clearscreen()">CLR</button>
+        <button  value="="  id="equal" onclick="result()">=</button>
+    </div>
+        </div>
+    </div>
+    <script>
+        var display = document.getElementById("display");
+        var num = display.getElementById("display").value;
+        function getvalue(num){
+            document.getElementById("display").value += num;
+        }
+        function clearscreen(){
+            document.getElementById("display").value = " ";
+        }
+        function result(num){
+            var val1 = document.getElementById("display").value;
+            var val2 = eval(val1);
+            document.getElementById("display").value = val2;
+        }
+    </script>
+</body>
+</html>
+
+
